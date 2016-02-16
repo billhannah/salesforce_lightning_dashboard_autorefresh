@@ -1,0 +1,43 @@
+{
+  "name": "Salesforce Dashboard Autorefresher",
+  "version": "1.0",
+  "version_name": "1.0 beta",
+  "description": "Automatically refreshes Salesforce dashboards when using the Lightning layout.",
+
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.force.com/desktopDashboards/*"],
+      "js": ["js/refresh_dashboard.js"],
+      "all_frames": true
+    }
+  ],
+
+  "options_page": "options.html",
+
+  "permissions": [
+    "declarativeContent",
+    "storage"
+  ],
+
+  "page_action" :  {
+    "default_icon" : {
+      "19": "logo-19.png",
+      "38": "logo-38.png"
+    },
+
+    "default_title" : "Salesforce Dashboard Autorefresher"
+  },
+
+  "icons": {
+    "16": "logo-16.png",
+    "48": "logo-48.png",
+    "128": "logo-128.png"
+  },
+
+  "manifest_version": 2
+}

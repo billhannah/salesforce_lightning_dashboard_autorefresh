@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salesforce Lightning Dashboard Autorefesh Options</title>
+    <style>
+
+        fieldset {
+            border: none;
+            padding: 1em;
+        }
+
+        ul {
+            margin:0 0 1em;
+            padding:0;
+            display: table;
+            width: 100%;
+        }
+
+        li {
+            list-style-type: none;
+            padding: 0 0 1em;
+            display: table-row;
+        }
+
+        label {
+            display: table-cell;
+            width: 40%;
+            vertical-align: top;
+            padding-right: 10%;
+        }
+
+        span.input {
+            display: table-cell;
+            width: 60%;
+            vertical-align: top;
+        }
+
+        input[type=number] {
+            width: 100%;
+        }
+
+        #status {
+            color: green;
+            font-size: 1.5em;
+            display: inline-block;
+            padding-left:1em;
+        }
+
+        .show {
+            opacity: 100;
+            -webkit-transition-property: opacity;
+            -moz-transition-property: opacity;
+            -ms-transition-property: opacity;
+            -o-transition-property: opacity;
+            transition-property: opacity;
+            -webkit-transition-duration: 250ms;
+            -moz-transition-duration: 250ms;
+            -ms-transition-duration: 250ms;
+            -o-transition-duration: 250ms;
+            transition-duration: 250ms;
+        }
+
+        .hide {
+            opacity:0;
+            -webkit-transition-property: opacity;
+            -moz-transition-property: opacity;
+            -ms-transition-property: opacity;
+            -o-transition-property: opacity;
+            transition-property: opacity;
+            -webkit-transition-duration: 750ms;
+            -moz-transition-duration: 750ms;
+            -ms-transition-duration: 750ms;
+            -o-transition-duration: 750ms;
+            transition-duration: 750ms;
+        }
+
+        button {
+            padding: 10px;
+            width: 150px;
+        }
+
+
+    </style>
+</head>
+<body>
+<fieldset>
+    <ul>
+        <li>
+            <label for="refresh_interval">How often to refresh the page (in minutes)</label>
+            <span class="input"><input type="number" min="1" max="30" step="1" name="refresh_interval" id="refresh_interval"></span>
+        </li>
+    </ul>
+    <div class="actions"><button id="save_btn">Save</button> <span id="status" class="hide"></span></div>
+</fieldset>
+<script src="js/options.js"></script>
+</body>
+</html>
